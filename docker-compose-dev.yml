@@ -1,0 +1,26 @@
+version: '3'
+services:
+  web:
+    build: .
+    restart: always
+    volumes:
+      - ./booked:/var/www/html/
+    env_file: .env
+    environment:
+      VIRTUAL_HOST: reservadesalas.ufca.edu.br
+      VIRTUAL_PORT: 80
+    ports:
+      - 80:80
+  db:
+    image: mariadb:10
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: reservadesalas
+      MYSQL_USER: reservadesalas
+      MYSQL_PASSWORD: reservadesalas
+    volumes:
+      - db:/var/lib/mysql/data
+      - ./database_schema/:/docker-entrypoint-initdb.d
+volumes:
+  db:

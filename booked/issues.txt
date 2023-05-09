@@ -1,0 +1,21 @@
+Não é possível realizar o login com a conta google (Pode ser porque estou usando local)
+
+Minha Conta/Alterar Senha
+	- O usuário não tem permissão para alterar a sua senha
+	- O arquivo de configuração está setado como:
+		$conf['settings']['disable.password.reset'] = 'true'; 
+
+Agenda/Calendário de Recursos e 
+Agenda/Meu Calendário
+
+	- caixa de seleção Alterar Calendário:
+		Apresenta uma lista muito estreita em que não é possível visualizar o conteúdo
+	- Usuário comum não pode criar uma reserva de recurso
+	- Na página de erro apresentada ao tentar criar uma reserva o link "Retornar para a última página que você estava" não funciona
+	
+	Quando o administrador cria uma reserva :
+		- Nesta situação, quando o usuário clica sobre a reserva é apresentado um erro:
+			"Você não tem permissão para acessar este recurso" 
+		
+Administrador:
+	- Ao finalizar uma reserva quando clica em "Fechar" surge um erro de redirecionamento.

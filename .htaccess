@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # only for the root directory
+    RewriteCond %{REQUEST_URI} ^/$
+    #if the uri is not already /Web
+    RewriteCond %{REQUEST_URI} !^/Web/ [NC]
+    RewriteRule ^$ /Web/    [R=302,L]
+</IfModule>

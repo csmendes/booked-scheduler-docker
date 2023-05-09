@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+  web:
+    build: .
+    restart: always
+    env_file: .env
+    volumes:
+      - uploads:/var/www/html/uploads
+      - web_uploads:/var/www/html/Web/uploads
+    environment:
+      VIRTUAL_HOST: reservadesalas.stg.ufca.edu.br
+      VIRTUAL_PORT: 80
+    networks:
+      - proxy       
+volumes:
+  uploads:
+  web_uploads:
+networks:
+  proxy:
+    name: proxy_nginx_default
